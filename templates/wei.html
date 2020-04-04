@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block body%}
+<h2>{{ the_title }} </h2>
+<strong>你在({{ the_x }},{{ the_y }})</strong>
+<table border="1" cellpadding="10">
+    <tr>
+        <th><a href="{{ the_xz }}-{{ the_yj }}"><button>左上({{ the_xz }},{{ the_yj }})</button></a></th>
+        <th><a href="{{ the_xz }}-{{ the_y }}"><button>上({{ the_xz }},{{ the_y }})</button></a></th>
+        <th><a href="{{ the_xz }}-{{ the_yz}}"><button>右上({{ the_xz }},{{ the_yz }})</button></a></th>
+    </tr>
+    <tr>
+        <th><a href="{{ the_x }}-{{ the_yj }}"><button>左({{ the_x }},{{ the_yj }})</button></a></th>
+        <th><a href="{{ the_x }}-{{ the_y }}"><button>这里</button></a></th>
+        <th><a href="{{ the_x }}-{{ the_yz }}"><button>右({{ the_x }},{{ the_yz }})</button></a></th>
+    </tr>
+    <tr>
+        <th><a href="{{ the_xj }}-{{ the_yj }}"><button>左下({{ the_xj }},{{ the_yj }})</button></a></th>
+        <th><a href="{{ the_xj }}-{{ the_y }}"><button>下({{ the_xj }},{{ the_y }})</button></a></th>
+        <th><a href="{{ the_xj }}-{{ the_yz }}"><button>右下({{ the_xj }},{{ the_yz }})</button></a></th>
+    </tr>
+</table>
+<form method="POST" action="{{ the_x }}-{{ the_y }}">
+    <input type="submit" value="查看这里">
+</form>
+<a href="/">返回主页</a>
+{% endblock%}
