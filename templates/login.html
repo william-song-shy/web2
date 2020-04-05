@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block body%}
+<form method="POST">
+    {{ form.csrf_token }}
+    {{ form.username.label }}:
+    {{ form.username }}<br>
+    {% for error in form.username.errors %}
+		<small class="error">{{ error }}</small><br>
+	{% endfor %}
+    {{ form.password.label }}:
+    {{ form.password }}<br>
+    {% for error in form.password.errors %}
+		<small class="error">{{ error }}</small><br>
+    {% endfor %}
+    {{ form.remember.label }}:
+    {{ form.remember }}<br>
+    {% for error in form.remember.errors %}
+		<small class="error">{{ error }}</small><br>
+    {% endfor %}
+    {{ form.submit }}
+</form>
+{% endblock%}
