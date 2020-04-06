@@ -131,6 +131,8 @@ def main():
 def admin():
     if not current_user.is_authenticated:
         abort(403)
+    if not current_user.is_admin:
+        abort (403)
     class AdminForm(FlaskForm):
         x = IntegerField('x', [InputRequired(), NumberRange(1, 2000)])
         y = IntegerField('y', [InputRequired(), NumberRange(1, 2000)])
