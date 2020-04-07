@@ -1,22 +1,10 @@
 {% extends 'base.html'%}
+{% from 'bootstrap/form.html' import render_form_row,render_field %}
 {% block body%}
 <form method="POST">
     {{ form.csrf_token }}
-    {{ form.username.label }}:
-    {{ form.username }}<br>
-    {% for error in form.username.errors %}
-		<small class="error">{{ error }}</small><br>
-	{% endfor %}
-    {{ form.password.label }}:
-    {{ form.password }}<br>
-    {% for error in form.password.errors %}
-		<small class="error">{{ error }}</small><br>
-    {% endfor %}
-    {{ form.remember.label }}:
-    {{ form.remember }}<br>
-    {% for error in form.remember.errors %}
-		<small class="error">{{ error }}</small><br>
-    {% endfor %}
-    {{ form.submit }}
+    {{ render_form_row ([form.username,form.password],col_class_default='col-md-2')}}
+    {{ render_field(form.remember) }}
+    {{ render_field(form.submit) }}
 </form>
 {% endblock%}
