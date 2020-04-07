@@ -1,0 +1,9 @@
+gunicorn
+gevent
+flask
+flask-login
+flask-sqlalchemy
+flask-wtf
+wtforms
+bootstrap-flask
+click
